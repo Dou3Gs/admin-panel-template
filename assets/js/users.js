@@ -283,31 +283,52 @@ function initializePagination() {
     }
 }
 
-// Update pagination info
+// Update pagination info and render page buttons
 function updatePaginationInfo() {
     const startRange = document.getElementById('startRange');
     const endRange = document.getElementById('endRange');
     const totalUsers = document.getElementById('totalUsers');
     const prevBtn = document.getElementById('prevPage');
     const nextBtn = document.getElementById('nextPage');
-    
+    const pageButtonsContainer = document.querySelector('.flex.items-center.space-x-1'); // container for page buttons
+
     const startIndex = (currentPage - 1) * itemsPerPage + 1;
     const endIndex = Math.min(currentPage * itemsPerPage, filteredUsers.length);
-    const maxPages = Math.ceil(filteredUsers.length / itemsPerPage);
-    
-    if (startRange) startRange.textContent = startIndex;
+    const maxPages = Math.max(1, Math.ceil(filteredUsers.length / itemsPerPage));
+
+    if (startRange) startRange.textContent = filteredUsers.length === 0 ? 0 : startIndex;
     if (endRange) endRange.textContent = endIndex;
     if (totalUsers) totalUsers.textContent = filteredUsers.length;
-    
+
     // Update button states
     if (prevBtn) {
         prevBtn.disabled = currentPage === 1;
         prevBtn.classList.toggle('opacity-50', currentPage === 1);
     }
-    
     if (nextBtn) {
         nextBtn.disabled = currentPage === maxPages;
         nextBtn.classList.toggle('opacity-50', currentPage === maxPages);
+    }
+
+    // Dynamically render page number buttons
+    if (pageButtonsContainer) {
+        pageButtonsContainer.innerHTML = '';
+        for (let i = 1; i <= maxPages; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i;
+            btn.className =
+                'px-3 py-1 text-sm rounded ' +
+                (i === currentPage
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600');
+            btn.addEventListener('click', () => {
+                if (currentPage !== i) {
+                    currentPage = i;
+                    renderUsersTable();
+                }
+            });
+            pageButtonsContainer.appendChild(btn);
+        }
     }
 }
 

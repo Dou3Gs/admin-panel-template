@@ -124,3 +124,34 @@ This is a common workflow when collaborating or pushing to a repo that already h
 
 **Reference:**  
 [GitHub: Dealing with non-fast-forward errors](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#dealing-with-non-fast-forward-errors) 
+
+---
+
+To switch to the `main` branch in Git, use the following command in your terminal:
+
+```sh
+git checkout main
+```
+or, with newer versions of Git, you can also use:
+```sh
+git switch main
+```
+
+**If you get an error** like `error: pathspec 'main' did not match any file(s) known to git`, it means the `main` branch does not exist locally. In that case, you can fetch all branches and then switch:
+
+```sh
+git fetch origin
+git checkout main
+```
+
+If your main branch is called `master` (in some older repositories), use `master` instead of `main`:
+
+```sh
+git checkout master
+```
+
+**Summary:**
+- To switch: `git checkout main` or `git switch main`
+- If not found: `git fetch origin` then `git checkout main`
+
+Let me know if you get any errors or need help with the next step! 
