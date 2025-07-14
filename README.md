@@ -275,6 +275,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by the Kcode Team**
+**Made with ❤️ by Romeo Douglas Tchibozo**
 
 *Ready to power your next admin dashboard project!* 
