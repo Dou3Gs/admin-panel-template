@@ -1,0 +1,464 @@
+/* Kcode Admin Panel - Custom Styles */
+
+/* Glassmorphism Card Component */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.dark .glass-card {
+    background: rgba(30, 41, 59, 0.25);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.dark .glass-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.5);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.7);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.5);
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom focus styles */
+.focus-ring:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: rgb(59, 130, 246);
+    ring-offset: 2px;
+}
+
+/* Button hover effects */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.dark .btn-glass {
+    background: rgba(30, 41, 59, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.dark .btn-glass:hover {
+    background: rgba(30, 41, 59, 0.2);
+}
+
+/* Loading animation */
+.loading-spinner {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Pulse animation for notifications */
+.pulse-dot {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Slide animations */
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom form styles */
+.form-input {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dark .form-input {
+    background: rgba(30, 41, 59, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.dark .form-input:focus {
+    background: rgba(30, 41, 59, 0.15);
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+/* Table styles */
+.table-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .table-glass {
+    background: rgba(30, 41, 59, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+    .glass-card {
+        margin: 0.5rem;
+    }
+    
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .glass-card {
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb !important;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .glass-card {
+        background: white;
+        border: 2px solid #000;
+    }
+    
+    .dark .glass-card {
+        background: #1f2937;
+        border: 2px solid #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+} 
+
+/* Remove blue focus outline/box from all form fields and their parents */
+form *:focus, input:focus, select:focus, textarea:focus, .form-input:focus, .ring-2, .ring-blue-500 {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #334155 !important;
+}
+
+/* Remove Tailwind's focus:ring and focus:border utilities */
+input:focus, select:focus, textarea:focus {
+    --tw-ring-shadow: none !important;
+    --tw-ring-color: transparent !important;
+    --tw-ring-offset-shadow: none !important;
+}
+
+/* Custom select dropdown styles */
+select {
+    background-color: inherit;
+    color: inherit;
+}
+
+select option {
+    background-color: #fff;
+    color: #1e293b;
+}
+
+.dark select option {
+    background-color: #1e293b;
+    color: #f1f5f9;
+} 
+
+/* Compact sidebar styles - improved for robustness */
+.compact-sidebar {
+    width: 4rem !important;
+    min-width: 4rem !important;
+    max-width: 4rem !important;
+    transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.compact-sidebar .flex.items-center.mb-8.px-2 > span,
+.compact-sidebar .sidebar-label,
+.compact-sidebar nav span {
+    display: none !important;
+}
+.compact-sidebar nav a {
+    justify-content: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.compact-sidebar nav a .w-5, .compact-sidebar nav a .h-5 {
+    margin-right: 0 !important;
+}
+.compact-sidebar .flex.items-center.mb-8.px-2 .w-8 {
+    margin-right: 0 !important;
+}
+.compact-sidebar .flex.items-center.mb-8.px-2 {
+    justify-content: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.compact-sidebar nav a {
+    transition: background 0.2s, color 0.2s;
+}
+.compact-sidebar nav a.bg-blue-50,
+.compact-sidebar nav a.dark\:bg-blue-900\/20 {
+    background: rgba(59,130,246,0.15) !important;
+} 
+
+/* --- Compact sidebar and navbar animation fix --- */
+/* (undo: no shifting or animation for .with-compact-sidebar) */ 
+
+/* Disable all transitions and animations when .no-animations is present on body */
+.no-animations *, .no-animations *:before, .no-animations *:after {
+  transition: none !important;
+  animation: none !important;
+} 
+
+/* Notification Panel Styles */
+#notificationPanel {
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Notification Badge Animation */
+#notificationBtn .absolute {
+    animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Notification Item Hover Effects */
+#notificationList > div {
+    transition: all 0.2s ease;
+}
+
+#notificationList > div:hover {
+    transform: translateX(4px);
+}
+
+/* Unread Notification Styling */
+#notificationList > div:not(.bg-blue-50):not(.dark .bg-blue-900\/20) {
+    border-left: 3px solid transparent;
+}
+
+#notificationList > div.bg-blue-50,
+#notificationList > div.dark .bg-blue-900\/20 {
+    border-left: 3px solid #3b82f6;
+}
+
+/* Notification Icons */
+#notificationList .fas {
+    font-size: 1.1rem;
+}
+
+/* Toast Notification Improvements */
+.glass-card.slide-in {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Notification Panel Scrollbar */
+#notificationList::-webkit-scrollbar {
+    width: 4px;
+}
+
+#notificationList::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+}
+
+#notificationList::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.dark #notificationList::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark #notificationList::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Notification Empty State */
+#notificationList .text-center {
+    padding: 2rem 1rem;
+}
+
+#notificationList .text-center i {
+    opacity: 0.5;
+}
+
+/* Notification Time Styling */
+#notificationList .text-xs {
+    font-weight: 500;
+}
+
+/* Mark All Read Button */
+#markAllRead {
+    transition: all 0.2s ease;
+}
+
+#markAllRead:hover {
+    transform: translateY(-1px);
+}
+
+/* View All Notifications Button */
+#viewAllNotifications {
+    transition: all 0.2s ease;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#viewAllNotifications:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Notification Panel Responsive */
+@media (max-width: 640px) {
+    #notificationPanel {
+        width: calc(100vw - 2rem);
+        right: 1rem;
+        left: 1rem;
+    }
+}
+
+/* Notification Badge Responsive */
+@media (max-width: 768px) {
+    #notificationBtn .absolute {
+        font-size: 0.625rem;
+        min-width: 1rem;
+        height: 1rem;
+    }
+} 
